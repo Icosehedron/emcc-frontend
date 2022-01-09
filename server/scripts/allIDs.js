@@ -9,13 +9,17 @@ function d() {
   // random digit
   return Math.floor(Math.random() * 10);
 }
+function ds() {
+  // random nonzero digit
+  return Math.floor(Math.random() * 9) + 1;
+}
 
 const usedIDs = new Set([""]);
 
 function genIndivID() {
   let id = "";
   while (usedIDs.has(id)) {
-    id = `${d()}${d()}50${d()}1${d()}${d()}`;
+    id = `${ds()}${d()}50${d()}1${d()}${d()}`;
   }
   return id;
 }
@@ -23,7 +27,7 @@ function genIndivID() {
 function genTeamID() {
   let id = "";
   while (usedIDs.has(id)) {
-    id = `${d()}${d()}23${d()}8${d()}${d()}`;
+    id = `${ds()}${d()}23${d()}8${d()}${d()}`;
   }
   return id;
 }
